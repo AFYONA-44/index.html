@@ -1,171 +1,159 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AFYONA</title>
-    <style>
-        body {
-            background-color: #000000; /* black background */
-            margin: 0;
-            padding: 0;
-            width: 100%;
-            height: 100vh;
-            overflow: hidden;
-            font-family: Arial, sans-serif;
-            text-align: center;
-            color: #ffffff;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AFYONA</title>
+  <style>
+    body {
+      background-color: #000000;
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100vh;
+      overflow: hidden;
+      font-family: Arial, sans-serif;
+      color: #ffffff;
+      text-align: center;
+    }
 
-        video.background-video {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            object-fit: cover;
-            z-index: -1;
-            filter: blur(10px);
-        }
+    video.background-video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+      z-index: -1;
+      filter: blur(10px);
+    }
 
-        img {
-            max-width: 100%;
-            height: auto;
-        }
+    img {
+      max-width: 100%;
+      height: auto;
+    }
 
-        .cmd-text-container {
-            position: relative;
-            top: -15px;
-        }
+    .cmd-text-container {
+      position: relative;
+      top: -15px;
+    }
 
-        .cmd-text {
-            color: black;
-            font-size: 17px;
-            font-family: Arial, sans-serif;
-            white-space: nowrap;
-            position: absolute;
-            animation: scrollText 20s linear infinite;
-            transform: translateX(100%);
-            -webkit-text-stroke: 3px black;
-            text-stroke: 3px black;
-        }
+    .cmd-text {
+      color: black;
+      font-size: 17px;
+      font-family: Arial, sans-serif;
+      white-space: nowrap;
+      position: absolute;
+      animation: scrollText 20s linear infinite;
+      transform: translateX(100%);
+      -webkit-text-stroke: 3px black;
+      text-stroke: 3px black;
+    }
 
-        .cmd-text:hover {
-            animation-play-state: paused;
-        }
+    .cmd-text:hover {
+      animation-play-state: paused;
+    }
 
-        @keyframes scrollText {
-            0% { transform: translateX(100%); }
-            100% { transform: translateX(-100%); }
-        }
+    @keyframes scrollText {
+      0% { transform: translateX(100%); }
+      100% { transform: translateX(-100%); }
+    }
 
-        @keyframes lightning {
-            0% { color: rgb(255, 0, 0); }
-            50% { color: rgb(0, 0, 0); }
-            100% { color: white; }
-        }
+    @keyframes lightning {
+      0% { color: rgb(255, 0, 0); }
+      50% { color: rgb(0, 0, 0); }
+      100% { color: white; }
+    }
 
-        .animated-text {
-            animation: lightning 1s linear infinite;
-        }
+    .animated-text {
+      animation: lightning 1s linear infinite;
+    }
 
-        #name {
-            font-size: 24px;
-        }
-    </style>
+    #name {
+      font-size: 24px;
+    }
+  </style>
 </head>
 <body>
 
-    <!-- Logo -->
-    <p align="center">
-        <img border="0" src="https://cdn.discordapp.com/avatars/1187486097874370630/fd3f0d1699bdb58e8e4d0507cb27760a.webp?size=4096&format=webp&width=670&height=670" width="device-width" height="200">
-    </p>
+  <p align="center">
+    <img border="0" src="https://cdn.discordapp.com/avatars/1187486097874370630/fd3f0d1699bdb58e8e4d0507cb27760a.webp?size=4096&format=webp&width=670&height=670" width="device-width" height="200">
+  </p>
 
-    <!-- Hacked Text -->
-    <p align="center">
-        <font face="Courier" size="6">
-            <span style="color: rgb(255, 0, 0);">Hacked </span>
-            <span id="name" style="color: white;">[ AFYONA ]</span>
-        </font>
-    </p>
+  <p align="center">
+    <font face="Courier" size="6">
+      <span style="color: rgb(255, 0, 0);">Hacked </span>
+      <span id="name" style="color: white;">[ AFYONA ]</span>
+    </font>
+  </p>
 
-    <!-- Discord Link -->
-    <p align="center">
-        <b>
-            <font face="Courier" color="#ffffff">
-                <a href="https://discord.gg/Ce7vCqtYj4" style="font-size: 24px; color: rgb(255, 255, 255); text-decoration: none;">Discord.gg/AFYONA</a>
-            </font>
-        </b>
-    </p>
+  <p align="center">
+    <b>
+      <font face="Courier" color="#ffffff">
+        <a href="https://discord.gg/Ce7vCqtYj4" style="font-size: 24px; color: rgb(255, 255, 255); text-decoration: none;">Discord.gg/AFYONA</a>
+      </font>
+    </b>
+  </p>
 
-    <!-- Animated Text -->
-    <h3 class="animated-text">AFYONA Passed From Here</h3>
+  <h3 class="animated-text">AFYONA Passed From Here</h3>
 
-    <!-- IP Address -->
-    <p id="ip-address">
-        <span style="color: rgb(255, 255, 255);">Your IP Address ya kosomk: </span>
-        <span id="ip-address-value" style="color: rgb(255, 255, 255); font-size: 17px;">Unable to fetch IP address.</span>
-    </p>
+  <p id="ip-address">
+    <span style="color: rgb(255, 255, 255);">Your IP Address ya kosomk: </span>
+    <span id="ip-address-value" style="color: rgb(255, 255, 255); font-size: 17px;">Unable to fetch IP address.</span>
+  </p>
 
-    <h3 style="color: rgb(255, 255, 255); animation: flashing 1s infinite;">Your IP Info :</h3>
-    <pre id="ip-info" class="json-data">Unable to fetch IP information.</pre>
+  <h3 style="color: rgb(255, 255, 255); animation: flashing 1s infinite;">Your IP Info :</h3>
+  <pre id="ip-info" class="json-data">Unable to fetch IP information.</pre>
 
-    <!-- Scrolling Command Text -->
-    <div class="cmd-text-container">
-        <div class="cmd-text"> You have got hacked by AFYONA </div>
-    </div>
+  <div class="cmd-text-container">
+    <div class="cmd-text"> You have got hacked by AFYONA </div>
+  </div>
 
-    <!-- Background Video -->
-    <video class="background-video" autoplay loop muted>
-        <source src="1.mp4" type="https://cdn.discordapp.com/attachments/1264876461777752094/1264877012896579716/1.mp4?ex=69067bc4&is=69052a44&hm=7afe81c5a79c8becbd477da93aec4d079f0437e92aa94abdce3a1054894203ff&"> <!-- ضع رابط الفيديو هنا -->
-    </video>
+  <!-- Background Video -->
+  <video class="background-video" autoplay loop muted>
+    <source src="https://cdn.discordapp.com/attachments/1264876461777752094/1264877012896579716/1.mp4?ex=69067bc4&is=69052a44&hm=7afe81c5a79c8becbd477da93aec4d079f0437e92aa94abdce3a1054894203ff&" type="video/mp4">
+  </video>
 
-    <!-- Background Sound -->
-    <audio autoplay loop>
-        <source src="sound.mp3" type="https://cdn.discordapp.com/attachments/1264876461777752094/1264877012896579716/1.mp4?ex=69067bc4&is=69052a44&hm=7afe81c5a79c8becbd477da93aec4d079f0437e92aa94abdce3a1054894203ff&"> <!-- ضع رابط الصوت هنا -->
-    </audio>
+  <!-- Background Sound -->
+  <audio autoplay loop>
+    <source src="sound.mp3" type="audio/mpeg"> <!-- ضع رابط الصوت هنا -->
+  </audio>
 
-    <!-- Name Changing Script -->
-    <script>
-        var names = [
-            { name: "[ AFYONA ]", color: "red" },
-        ];
+  <script>
+    var names = [
+      { name: "[ AFYONA ]", color: "red" }
+    ];
+    var nameIndex = 0;
+    function changeNames() {
+      var currentName = names[nameIndex];
+      document.getElementById("name").textContent = currentName.name;
+      document.getElementById("name").style.color = currentName.color;
+      nameIndex = (nameIndex + 1) % names.length;
+    }
+    setInterval(changeNames, 1000);
+  </script>
 
-        var nameIndex = 0;
-
-        function changeNames() {
-            var currentName = names[nameIndex];
-            document.getElementById("name").textContent = currentName.name;
-            document.getElementById("name").style.color = currentName.color;
-            nameIndex = (nameIndex + 1) % names.length;
-        }
-
-        setInterval(changeNames, 1000);
-    </script>
-
-    <!-- Fetch IP -->
-    <script>
-        function fetchIPAndInfo() {
-            fetch('https://api.ipify.org/?format=json')
-                .then(response => response.json())
-                .then(data => {
-                    document.getElementById('ip-address-value').textContent = data.ip;
-                    return data.ip;
-                })
-                .then(ip => fetch(`https://ipinfo.io/${ip}/json`))
-                .then(response => response.json())
-                .then(ipInfoData => {
-                    document.getElementById('ip-info').textContent = JSON.stringify(ipInfoData, null, 2);
-                })
-                .catch(error => {
-                    console.error('Error:', error);
-                    document.getElementById('ip-address-value').textContent = 'Unable to fetch IP address.';
-                    document.getElementById('ip-info').textContent = 'Unable to fetch IP information.';
-                });
-        }
-
-        fetchIPAndInfo();
-    </script>
+  <script>
+    function fetchIPAndInfo() {
+      fetch('https://api.ipify.org/?format=json')
+        .then(response => response.json())
+        .then(data => {
+          document.getElementById('ip-address-value').textContent = data.ip;
+          return data.ip;
+        })
+        .then(ip => fetch(`https://ipinfo.io/${ip}/json`))
+        .then(response => response.json())
+        .then(ipInfoData => {
+          document.getElementById('ip-info').textContent = JSON.stringify(ipInfoData, null, 2);
+        })
+        .catch(error => {
+          console.error('Error:', error);
+          document.getElementById('ip-address-value').textContent = 'Unable to fetch IP address.';
+          document.getElementById('ip-info').textContent = 'Unable to fetch IP information.';
+        });
+    }
+    fetchIPAndInfo();
+  </script>
 
 </body>
 </html>
